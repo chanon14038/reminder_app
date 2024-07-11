@@ -1,3 +1,3 @@
 # reminder_app
 
-A new Flutter project.
+This is a Reminder App
