@@ -13,6 +13,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Reminder App',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
       home: BlocProvider(
         create: (context) => ReminderBloc(),
         child: ReminderPage(),

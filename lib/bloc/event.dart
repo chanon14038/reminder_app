@@ -34,3 +34,28 @@ class DeleteReminder extends ReminderEvent {
   @override
   List<Object> get props => [id];
 }
+
+class MarkAsSubmitted extends ReminderEvent {
+  final int id;
+
+  const MarkAsSubmitted(this.id);
+
+  @override
+  List<Object> get props => [id];
+}
+
+class MarkAsComplete extends ReminderEvent {
+  final int id;
+
+  const MarkAsComplete(this.id);
+
+  @override
+  List<Object> get props => [id];
+}
+
+
+class CheckLateReminders extends ReminderEvent {}
+
+
+
+
