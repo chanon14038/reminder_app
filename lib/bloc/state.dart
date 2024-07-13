@@ -1,20 +1,11 @@
+import 'package:equatable/equatable.dart';
 import 'package:reminder_app/model.dart';
 
-sealed class LastTimeState {
-  final List<LastTimeItem> items;
-  LastTimeState({required this.items});
-}
+class ReminderState extends Equatable {
+  final List<LastTimeItem> reminders;
 
-const List<LastTimeItem> empty = [];
+  const ReminderState(this.reminders);
 
-class LoadingState extends LastTimeState {
-  LoadingState() : super(items: empty);
-}
-
-class ReadyState extends LastTimeState {
-  ReadyState({required super.items});
-}
-
-class SearchState extends LastTimeState {
-  SearchState({required super.items});
+  @override
+  List<Object> get props => [reminders];
 }

@@ -4,10 +4,16 @@ class LastTimeItem extends Equatable {
   final int id;
   final String tasks;
   final int cycleDays;
-  final DateTime? lastAction;
+  bool isComplete;
+  final DateTime? lastSubmit;
 
-  const LastTimeItem(this.id, this.tasks, this.cycleDays, this.lastAction);
+  LastTimeItem(
+      {required this.id,
+      required this.tasks,
+      required this.cycleDays,
+      this.isComplete = false,
+      this.lastSubmit});
 
   @override
-  List<Object?> get props => [id, lastAction];
+  List<Object?> get props => [];
 }

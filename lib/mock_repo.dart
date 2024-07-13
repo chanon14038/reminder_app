@@ -5,11 +5,11 @@ class LastTimeMockRepository extends LastTimeRepository {
   @override
   Future<List<LastTimeItem>> load() async {
     await Future.delayed(const Duration(seconds: 2));
-    return [
-      const LastTimeItem(1, 'ซักผ้า', 7, null),
-      const LastTimeItem(2, 'ถูบ้าน', 10, null),
-      const LastTimeItem(3, 'เปลี่ยนผ้าปูที่นอน', 14, null),
-      const LastTimeItem(4, 'โทรหาแม่', 3, null),
+    return  [
+      LastTimeItem(id: 1, tasks: 'ซักผ้า', cycleDays:7),
+      LastTimeItem(id: 2, tasks: 'ถูบ้าน', cycleDays: 10),
+      LastTimeItem(id: 3, tasks: 'เปลี่ยนผ้าปูที่นอน', cycleDays: 14),
+      LastTimeItem(id: 4, tasks: 'โทรหาแม่', cycleDays: 3),
     ];
   }
 }

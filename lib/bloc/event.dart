@@ -1,18 +1,36 @@
-sealed class LastTimeEvent {}
+import 'package:equatable/equatable.dart';
+import 'package:reminder_app/model.dart';
 
-class LoadEvent extends LastTimeEvent {}
+abstract class ReminderEvent extends Equatable {
+  const ReminderEvent();
 
-class LastTimeActionEvent extends LastTimeEvent {
+  @override
+  List<Object> get props => [];
+}
+
+class AddReminder extends ReminderEvent {
+  final LastTimeItem reminder;
+
+  const AddReminder(this.reminder);
+
+  @override
+  List<Object> get props => [reminder];
+}
+
+class UpdateReminder extends ReminderEvent {
+  final LastTimeItem reminder;
+
+  const UpdateReminder(this.reminder);
+
+  @override
+  List<Object> get props => [reminder];
+}
+
+class DeleteReminder extends ReminderEvent {
   final int id;
-  final DateTime lastAction;
 
-  LastTimeActionEvent(this.id, this.lastAction);
-}
+  const DeleteReminder(this.id);
 
-class SearchEvent extends LastTimeEvent {
-  final String key;
-  SearchEvent(this.key);
-}
-
-class SearchClearEvent extends LastTimeEvent {
+  @override
+  List<Object> get props => [id];
 }
